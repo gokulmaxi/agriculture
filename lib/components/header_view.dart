@@ -1,4 +1,3 @@
-import 'package:agriculture/components/temperature_view.dart';
 import 'package:flutter/material.dart';
 
 class HeaderView extends StatelessWidget {

@@ -5,9 +5,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:neuomorphic_container/neuomorphic_container.dart';
 
 class TemeratureView extends StatelessWidget {
-  const TemeratureView({
-    Key key,
-  }) : super(key: key);
+  final int temerature;
+
+  const TemeratureView({Key key, @required this.temerature}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +35,7 @@ class TemeratureView extends StatelessWidget {
                       ),
                     ],
                   ),
+                  Text(this.temerature.toString() + "°C"),
                   Text(
                     "Temperature & humidity",
                     style: TextStyle(

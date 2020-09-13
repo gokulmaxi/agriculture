@@ -4,6 +4,8 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:neuomorphic_container/neuomorphic_container.dart';
 
 class Dashboard extends StatefulWidget {
+  final int temperature;
+  Dashboard({Key key, @required this.temperature}) : super(key: key);
   @override
   _DashboardState createState() => _DashboardState();
 }
@@ -15,17 +17,6 @@ class _DashboardState extends State<Dashboard>
   final rf = FirebaseDatabase.instance.reference();
 
   @override
-  void initState() {
-    super.initState();
-    rf.reference().child('Humidity').once().then((DataSnapshot snapshot) {
-      String h = snapshot.value['Data'];
-
-      print(h);
-
-      isLoading = true;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

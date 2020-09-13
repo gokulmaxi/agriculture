@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:neuomorphic_container/neuomorphic_container.dart';
 
 class TemeratureView extends StatelessWidget {
   final int temerature;
@@ -35,7 +34,6 @@ class TemeratureView extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Text(this.temerature.toString() + "°C"),
                   Text(
                     "Temperature & humidity",
                     style: TextStyle(

@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:waveprogressbar_flutter/waveprogressbar_flutter.dart';
 
 class WaveProgress extends StatefulWidget {
+  final int soilMoisture;
+
+  const WaveProgress({Key key, @required this.soilMoisture}) : super(key: key);
   @override
-  WaveProgressState createState() => new WaveProgressState();
+  WaveProgressState createState() =>
+      new WaveProgressState(soilMoisture: this.soilMoisture);
 }
 
 class WaveProgressState extends State<WaveProgress> {
+  WaveProgressState({@required this.soilMoisture});
+  final int soilMoisture;
+
   double waterHeight = 0.0;
   WaterController waterController = WaterController();
 
@@ -15,7 +22,7 @@ class WaveProgressState extends State<WaveProgress> {
     super.initState();
     WidgetsBinding widgetsBinding = WidgetsBinding.instance;
     widgetsBinding.addPostFrameCallback((callback) {
-      waterController.changeWaterHeight(0.82);
+      waterController.changeWaterHeight(this.soilMoisture / 100);
     });
   }
 
